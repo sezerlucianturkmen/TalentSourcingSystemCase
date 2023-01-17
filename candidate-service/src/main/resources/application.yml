@@ -1,0 +1,16 @@
+server:
+  port: 8095
+
+spring:
+  datasource:
+    username: 'postgres'
+    password: 'root'
+    url: 'jdbc:postgresql://localhost:5432/PeoplistDB'
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: create-drop
+    show-sql: true
+
+

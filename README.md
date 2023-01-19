@@ -6,7 +6,7 @@ A Spring Boot REST application to support required assignment documents.
 
 PostgreSQL Database:  ---> name of Database: <strong>PeoplistDB</strong>
 
-LocalHost:            ---> Server Port: <strong>8085</strong>
+LocalHost:            ---> Server Port: <strong>8095</strong>
 
 API Control:          ---> Swagger: <link>http://localhost:8095/swagger-ui/index.html#/
 

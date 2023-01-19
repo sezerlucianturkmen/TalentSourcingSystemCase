@@ -23,7 +23,7 @@ public  class Interaction {
     private Candidate candidate;
     private String content;
     private String date;
-    private Boolean candidate_responded;
+    private Boolean candidateResponded;
     @Enumerated(EnumType.STRING)
     private InteractionType interactionType;
 }

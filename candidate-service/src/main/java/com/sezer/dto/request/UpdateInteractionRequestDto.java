@@ -14,7 +14,4 @@ public class UpdateInteractionRequestDto {
     private Long id;
     private Long candidateid;
     private String content;
-    private String date;
-    private Boolean candidate_responded;
-    private InteractionType interactionType;
 }

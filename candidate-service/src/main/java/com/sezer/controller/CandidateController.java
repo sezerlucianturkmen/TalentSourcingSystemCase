@@ -41,6 +41,14 @@ public class CandidateController {
         return ResponseEntity.ok(candidateService.findAllCandidates());
     }
 
+
+    @GetMapping(FINDALLSOURCED)
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
+    public ResponseEntity<List<CandidateResponseDto>> findAllSourced(){
+        return ResponseEntity.ok(candidateService.findAllCandidatesSourced());
+    }
+
+
     @DeleteMapping(DELETE)
     @CrossOrigin(origins = "*", allowedHeaders = "*")
     @Operation(summary = "You can delete candidate")
@@ -48,5 +56,11 @@ public class CandidateController {
         return ResponseEntity.ok(candidateService.deleteCandidate(id));
     }
 
+    @GetMapping(FINDBYID)
+    @CrossOrigin(origins = "*", allowedHeaders = "*")
+    @Operation(summary = "You can find candidate")
+    public ResponseEntity<CandidateResponseDto> findCandidate(@PathVariable Long id){
+        return ResponseEntity.ok(candidateService.findCandidate(id));
+    }
 
 }

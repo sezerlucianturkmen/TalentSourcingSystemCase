@@ -22,7 +22,7 @@ public class Candidate {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String nameSurname;
-    @OneToMany(mappedBy = "candidate")
+    @OneToMany(mappedBy = "candidate",cascade = CascadeType.ALL)
     @JsonIgnore
     private List<Interaction> previousInteractions;
     @Enumerated(EnumType.STRING)

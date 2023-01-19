@@ -15,5 +15,5 @@ public class UpdateCandidateRequestDto {
     private String nameSurname;
     private String email;
     private String phone;
-    private Status status;
+    private String status;
 }

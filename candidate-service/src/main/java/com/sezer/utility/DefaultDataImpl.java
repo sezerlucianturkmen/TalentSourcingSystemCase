@@ -49,16 +49,16 @@ public class DefaultDataImpl {
         Interaction interaction1=Interaction.builder()
                 .interactionType(InteractionType.PHONE)
                 .content("Initial meeting call")
-                .date("22-12-2022")
-                .candidate_responded(true)
+                .date("2022-03-12")
+                .candidateResponded(true)
                 .candidate(candidate1)
                 .build();
         interactionService.save(interaction1);
         Interaction interaction2=Interaction.builder()
                 .interactionType(InteractionType.PHONE)
                 .content("Second meeting call")
-                .date("02-01-2023")
-                .candidate_responded(true)
+                .date("2023-04-24")
+                .candidateResponded(true)
                 .candidate(candidate1)
                 .build();
         interactionService.save(interaction2);
@@ -84,24 +84,24 @@ public class DefaultDataImpl {
         Interaction interaction3=Interaction.builder()
                 .interactionType(InteractionType.PHONE)
                 .content("Initial meeting call")
-                .date("27-12-2022")
-                .candidate_responded(true)
+                .date("2022-07-04")
+                .candidateResponded(true)
                 .candidate(candidate2)
                 .build();
         interactionService.save(interaction3);
         Interaction interaction4=Interaction.builder()
                 .interactionType(InteractionType.PHONE)
                 .content("Second meeting call")
-                .date("06-01-2023")
-                .candidate_responded(true)
+                .date("2023-01-23")
+                .candidateResponded(true)
                 .candidate(candidate2)
                 .build();
         interactionService.save(interaction4);
         Interaction interaction5=Interaction.builder()
                 .interactionType(InteractionType.MAIL)
                 .content("Offer is sent to the candidate")
-                .date("12-01-2023")
-                .candidate_responded(true)
+                .date("2022-12-28")
+                .candidateResponded(true)
                 .candidate(candidate2)
                 .build();
         interactionService.save(interaction5);
@@ -109,6 +109,106 @@ public class DefaultDataImpl {
         candidate2.setContactInformation(contactInformation2);
         candidate2.setPreviousInteractions(Arrays.asList(interaction3,interaction4,interaction5));
         candidateService.save(candidate2);
+
+        //3
+        Candidate candidate3=Candidate.builder()
+                .nameSurname("Francesca Ferrari")
+                .status(Status.SOURCED)
+                .build();
+        candidateService.save(candidate3);
+
+        ContactInformation contactInformation3=ContactInformation.builder()
+                .email("francesca@gmail.com")
+                .phone("+90 505 005 6677")
+                .candidate(candidate3)
+                .build();
+        contactInformationService.save(contactInformation3);
+
+        Interaction interaction6=Interaction.builder()
+                .interactionType(InteractionType.PHONE)
+                .content("Initial meeting call")
+                .date("2022-11-10")
+                .candidateResponded(true)
+                .candidate(candidate3)
+                .build();
+        interactionService.save(interaction6);
+        Interaction interaction7=Interaction.builder()
+                .interactionType(InteractionType.PHONE)
+                .content("Second meeting call")
+                .date("2022-10-31")
+                .candidateResponded(true)
+                .candidate(candidate3)
+                .build();
+        interactionService.save(interaction7);
+
+        candidate3.setContactInformation(contactInformation3);
+        candidate3.setPreviousInteractions(Arrays.asList(interaction6,interaction7));
+        candidateService.save(candidate3);
+
+        //4
+        Candidate candidate4=Candidate.builder()
+                .nameSurname("Mehmet Yorulmazer")
+                .status(Status.SOURCED)
+                .build();
+        candidateService.save(candidate4);
+
+        ContactInformation contactInformation4=ContactInformation.builder()
+                .email("mehmet@gmail.com")
+                .phone("+90 555 775 6677")
+                .candidate(candidate4)
+                .build();
+        contactInformationService.save(contactInformation4);
+
+        Interaction interaction8=Interaction.builder()
+                .interactionType(InteractionType.PHONE)
+                .content("Initial meeting call")
+                .date("2023-01-03")
+                .candidateResponded(true)
+                .candidate(candidate4)
+                .build();
+        interactionService.save(interaction8);
+
+
+        candidate4.setContactInformation(contactInformation4);
+        candidate4.setPreviousInteractions(Arrays.asList(interaction8));
+        candidateService.save(candidate4);
+
+        //5
+        Candidate candidate5=Candidate.builder()
+                .nameSurname("Sezer Turkmen")
+                .status(Status.SOURCED)
+                .build();
+        candidateService.save(candidate5);
+
+        ContactInformation contactInformation5=ContactInformation.builder()
+                .email("sezer@gmail.com")
+                .phone("+90 505 005 6666")
+                .candidate(candidate5)
+                .build();
+        contactInformationService.save(contactInformation5);
+
+        Interaction interaction9=Interaction.builder()
+                .interactionType(InteractionType.PHONE)
+                .content("Initial meeting call")
+                .date("2022-10-10")
+                .candidateResponded(true)
+                .candidate(candidate5)
+                .build();
+        interactionService.save(interaction9);
+
+        Interaction interaction10=Interaction.builder()
+                .interactionType(InteractionType.PHONE)
+                .content("Second meeting call")
+                .date("2022-09-07")
+                .candidateResponded(false)
+                .candidate(candidate5)
+                .build();
+        interactionService.save(interaction10);
+
+        candidate5.setContactInformation(contactInformation5);
+        candidate5.setPreviousInteractions(Arrays.asList(interaction9,interaction10));
+        candidateService.save(candidate5);
+
 
     }
 

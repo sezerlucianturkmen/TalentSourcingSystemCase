@@ -59,10 +59,7 @@ public class InteractionService extends ServiceManager<Interaction,Long> {
         Optional<Interaction> interaction = findById(dto.getId());
         if(interaction.isPresent()){
             interaction.get().setContent(dto.getContent());
-            interaction.get().setDate(dto.getDate());
-            interaction.get().setInteractionType(dto.getInteractionType());
-            interaction.get().setCandidate_responded(dto.getCandidate_responded());
-            save(interaction.get());
+            update(interaction.get());
             Candidate candidateReturn =candidateService.findById(dto.getCandidateid()).get();
             return CandidateResponseDto.builder()
                     .id(candidateReturn.getId())
@@ -84,6 +81,10 @@ public class InteractionService extends ServiceManager<Interaction,Long> {
             return interactions.get().stream().map(x-> {
                 InteractionResponseDto dto =IInteractionMapper.INSTANCE.toInteractionResponseDto(x);
                 dto.setCandidateid(x.getCandidate().getId());
+                dto.setNameSurname(candidateService.findById(x.getCandidate().getId()).get().getNameSurname());
+                dto.setEmail(candidateService.findById(x.getCandidate().getId()).get().getContactInformation().getEmail());
+                dto.setPhone(candidateService.findById(x.getCandidate().getId()).get().getContactInformation().getPhone());
+
                 return dto;
             }).collect(Collectors.toList());
         }else{

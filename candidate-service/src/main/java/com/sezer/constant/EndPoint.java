@@ -14,7 +14,9 @@ public class EndPoint {
     public static final String UPDATE = "/update";
     public static final String DELETE = "/delete/{id}";
     public static final String FINDALLBYID = "/findallbyid/{candidateid}";
+    public static final String FINDBYID = "/findbyid/{id}";
     public static final String FINDALL = "/findall";
+    public static final String FINDALLSOURCED = "/findallsourced";
 
 
 }

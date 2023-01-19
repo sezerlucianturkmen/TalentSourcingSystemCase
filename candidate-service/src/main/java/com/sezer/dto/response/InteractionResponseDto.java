@@ -16,7 +16,10 @@ public class InteractionResponseDto {
     private Long candidateid;
     private String content;
     private String date;
-    private Boolean candidate_responded;
+    private Boolean candidateResponded;
     private InteractionType interactionType;
+    private String nameSurname;
+    private String email;
+    private String phone;
 
 }
